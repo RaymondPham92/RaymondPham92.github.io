@@ -5,32 +5,33 @@ import axios from 'axios'
 function App() {
   const API_key = 'dbafa9aab1ad78fe793475dee0990fd1'
 
-  const [data, setData] = useState({})
   const [cityName, setCityName] = useState("")
   const [weatherData, setWeatherData] = useState({})
-
-  var lat = 0
-  var lon = 0
-
-  // get latitude and longitude from city name
-  const geocoding_url = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${API_key}`
+  const [name, setName] = useState("")
+  
 
   const searchLocation = (event) =>{
-    if (cityName === '') {
+    if (cityName === '' || cityName === null) {
       return
     }
+    const geocoding_url = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${API_key}`
     axios.get(geocoding_url).then((response) => {
-      setData(response.data[0])
-      lat = data.lat
-      lon = data.lon
-      console.log(data)
-      const weather_url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_key}`
-      axios.get(weather_url).then((response) => {
-        setWeatherData(response.data)
-        console.log(weatherData)
-        setCityName('')
-      })
+      const locationData = response.data[0];
       
+      if (locationData) {
+        const lat = locationData.lat
+        const lon = locationData.lon
+        setName(locationData.name)
+        console.log(locationData);
+        const weather_url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_key}`
+        axios.get(weather_url).then((weatherResponse) => {
+          setWeatherData(weatherResponse.data)
+          console.log(weatherResponse.data)
+          setCityName('')
+        })
+      }
+    }).catch((error) => {
+      console.error('Error fetching geocoding data:', error);
     })
   }
 
@@ -55,30 +56,33 @@ function App() {
       <div className='container'>
         <div className='top'>
           <div className='location'>
-            <p>Sydney</p>
+            <p>{name}</p>
           </div>
           <div className='temp'>
-            <h1>10°C</h1>
+            {weatherData.main ? <h1>{weatherData.main.temp.toFixed()}°C</h1> : null}
           </div>
           <div className='desc'>
-            <p>Clouds</p>
+            {weatherData.weather ? <p>{weatherData.weather[0].main}</p> : null}
+           
           </div>
         </div>
 
-        <div className='bot'>
+        {weatherData.name !== undefined &&
+          <div className='bot'>
           <div className='feels_like'>
-            <p className='bold'>15°C</p>
+            {weatherData.main ? <p className='bold'>{weatherData.main.feels_like.toFixed()}°C</p> : null }
             <p>Feels Like</p>
           </div>
           <div className='humidity'>
-            <p className='bold'>20%</p>
+            {weatherData.main ? <p className='bold'>{weatherData.main.humidity}%</p> : null }
             <p>Humidity</p>
           </div>
           <div className='wind'>
-            <p className='bold'>10 km/h</p>
+            {weatherData.wind ? <p className='bold'>{weatherData.wind.speed}m/s</p> : null }  
             <p>Wind Speed</p>
           </div>
         </div>
+        }
       </div>
     </div>
   );
