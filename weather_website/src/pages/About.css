@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500&display=swap');
+
+.background {
+	background: url('../assets/landscape.jpeg') no-repeat center center/cover;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+}
+
+.aboutContainer {
+	background-color: rgba(146,146,146,0.9);
+	border: 5px solid;
+  padding: 10px;
+	border-radius: 20px;
+}
+
+.title {
+	text-align: center;
+}
+
+#txt {
+	margin-top: 4%;
+}
