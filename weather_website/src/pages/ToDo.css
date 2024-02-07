@@ -8,8 +8,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.background {
-	background: url('../assets/landscape.jpeg') no-repeat center center/cover;
+.todoBackground {
+	background: url('../assets/todowallpaper.jpeg') no-repeat center center/cover;
 	background-size: cover;
 	height: 100%;
 	width: 100%;
@@ -19,17 +19,39 @@ body {
 	justify-content: center;
 }
 
-.aboutContainer {
+.todoContainer {
 	background-color: rgba(146,146,146,0.9);
 	border: 5px solid;
   padding: 10px;
 	border-radius: 20px;
+	width: 40%;
 }
 
-.title {
+.checkbox {
+	margin: 0;
+	margin-right: 10%;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+label {
+	margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+	width: 50%;
+	padding-top: 2.5%;
+}
+
+.delete {
+	margin-left: 10%;
+	float: right;
+}
+
+.todoname {
 	text-align: center;
-}
-
-#txt {
-	margin-top: 4%;
+	font-size: medium;
 }
