@@ -12,6 +12,7 @@ function MyNavbar() {
             <Nav.Link><Link to='/about'>About</Link></Nav.Link>
             <Nav.Link><Link to='/weather'>Weather App</Link></Nav.Link>
             <Nav.Link><Link to='/todo'>To Do List</Link></Nav.Link>
+            <Nav.Link><Link to='/calculator'>Calculator</Link></Nav.Link>
           </Nav>
         </Container>
       </Navbar>

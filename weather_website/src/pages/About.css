@@ -26,6 +26,10 @@ body {
 	border-radius: 20px;
 }
 
+.aboutContainer p {
+	text-align: center;
+}
+
 .title {
 	text-align: center;
 }

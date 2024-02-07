@@ -3,6 +3,7 @@ import {Routes, Route, Navigate} from 'react-router-dom'
 import {About} from './pages/About'
 import {Weather} from './pages/Weather'
 import ToDo from './pages/ToDo'
+import Calculator from './pages/Calculator'
 import MyNavbar from './components/MyNavbar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -15,6 +16,7 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route path='/weather' element={<Weather/>}/>
         <Route path='/todo' element={<ToDo/>}/>
+        <Route path='/calculator' element={<Calculator/>}/>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </>

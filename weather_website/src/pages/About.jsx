@@ -9,6 +9,7 @@ export function About () {
 				<div id='txt'>
 					<p>Weather app based on Code Commerce tutorial: <a href='https://www.youtube.com/watch?v=UjeXpct3p7M'>here</a></p>
 					<p>To do list based on Web Dev Simplified tutorial: <a href='https://www.youtube.com/watch?v=Rh3tobg7hEo'>here</a> </p>
+					<p>Calculator app based on Web Dev Simplified tutorial: <a href='https://www.youtube.com/watch?v=DgRrrOt0Vr8'>here</a> </p>
 				</div>
 			</div>
 		</div>
