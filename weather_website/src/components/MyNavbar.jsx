@@ -9,10 +9,10 @@ function MyNavbar() {
         <Container style={{display: 'flex', flexDirection: 'row'}}>
           <Navbar.Brand href="/">React Practice Project</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href='/about'><Link to='/about'>About</Link></Nav.Link>
-            <Nav.Link href='/weather'><Link to='/weather'>Weather</Link></Nav.Link>
-            <Nav.Link href='/todo'><Link to='/todo'>To Do List</Link></Nav.Link>
-            <Nav.Link href='calculator'><Link to='/calculator'>Calculator</Link></Nav.Link>
+            <Nav.Link><Link to='/about'>About</Link></Nav.Link>
+            <Nav.Link><Link to='/weather'>Weather</Link></Nav.Link>
+            <Nav.Link><Link to='/todo'>To Do List</Link></Nav.Link>
+            <Nav.Link><Link to='/calculator'>Calculator</Link></Nav.Link>
           </Nav>
         </Container>
       </Navbar>
