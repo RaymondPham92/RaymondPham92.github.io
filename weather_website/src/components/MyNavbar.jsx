@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 
 function MyNavbar() {
   return (
@@ -8,10 +9,10 @@ function MyNavbar() {
         <Container style={{display: 'flex', flexDirection: 'row'}}>
           <Navbar.Brand href="/">React Practice Project</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href='/about'>About</Nav.Link>
-            <Nav.Link href='/weather'>Weather</Nav.Link>
-            <Nav.Link href='/todo'>To Do List</Nav.Link>
-            <Nav.Link href='calculator'>Calculator</Nav.Link>
+            <Nav.Link href='/about'><Link to='/about'>About</Link></Nav.Link>
+            <Nav.Link href='/weather'><Link to='/weather'>Weather</Link></Nav.Link>
+            <Nav.Link href='/todo'><Link to='/todo'>To Do List</Link></Nav.Link>
+            <Nav.Link href='calculator'><Link to='/calculator'>Calculator</Link></Nav.Link>
           </Nav>
         </Container>
       </Navbar>
