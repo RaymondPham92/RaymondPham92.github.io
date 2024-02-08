@@ -14,7 +14,7 @@ export function Weather () {
     if (cityName === '' || cityName === null) {
       return
     }
-    const geocoding_url = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${API_key}`
+    const geocoding_url = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${API_key}`
     axios.get(geocoding_url).then((response) => {
       const locationData = response.data[0];
       
